@@ -1,4 +1,4 @@
-package com.jiangjq.charge.countdownlatch;
+package com.jiangjq.charge.concurrent.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 

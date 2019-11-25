@@ -1,8 +1,7 @@
 package com.jiangjq.charge.concurrent;
 
 import com.jiangjq.charge.ChargeApplicationTests;
-import com.jiangjq.charge.countdownlatch.Worker;
-import com.jiangjq.charge.leetcode.queeuandstack.ArrayCycleQueueTest;
+import com.jiangjq.charge.concurrent.countdownlatch.Worker;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
