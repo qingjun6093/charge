@@ -22,11 +22,18 @@ public class AsyncService {
     private static Logger logger = LoggerFactory.getLogger(AsyncService.class);
 
 
-
-
     @Async
     public Future<Long> getCurrentTime(){
+        return new AsyncResult<>(System.currentTimeMillis());
+    }
 
+    @Async
+    public Future<Long> futureTest(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new AsyncResult<>(System.currentTimeMillis());
     }
 
