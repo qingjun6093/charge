@@ -5,8 +5,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -44,7 +43,7 @@ public class ReentrantLockTest extends ChargeApplicationTests {
         @Override
         public void run() {
             int r = 1;
-            ReentrantLock lock = new ReentrantLock(true);
+            ReentrantLock lock = new ReentrantLock();
             //调用lock,state = state+1
             lock.lock();
             try {
@@ -58,6 +57,27 @@ public class ReentrantLockTest extends ChargeApplicationTests {
             }
             logger.info("r:{}", r);
         }
+    }
+
+
+    /**
+     * 只能有一个线程加锁成功
+     * @throws InterruptedException
+     */
+    @Test
+    public void reentrantLock1() throws InterruptedException {
+        final  ReentrantLock lock = new ReentrantLock();
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        int pool = 4;
+        for (int i = 0; i < pool; i++) {
+            //final int threadNum=i;
+            executorService.execute(() -> {
+                lock.lock();
+                System.out.println(lock.toString());
+            });
+        }
+
+
     }
 
 
