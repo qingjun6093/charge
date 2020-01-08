@@ -65,4 +65,11 @@ public class HashMapTest {
             System.out.println(entry.getKey().toString()+"=>"+entry.getValue());
         }
     }
+
+    @Test
+    public void snowFake(){
+        long res = (1576830671154L<<10|23)<<12;
+        System.out.println(res);
+
+    }
 }

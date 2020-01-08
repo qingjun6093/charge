@@ -35,7 +35,12 @@
 			<artifactId>netty-all</artifactId>
 			<version>4.1.20.Final</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.github.snksoft/crc -->
+		<dependency>
+			<groupId>com.github.snksoft</groupId>
+			<artifactId>crc</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
